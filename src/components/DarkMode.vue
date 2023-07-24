@@ -64,7 +64,6 @@ export default {
   color: white;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
 }
 
 .toggleWrapper input {

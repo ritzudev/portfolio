@@ -38,8 +38,7 @@
         <div class="xm:flex-col xm:pl-3 xm:pr-2 flex ">
           <h1 class="xm:text-xs opacity-60 text-white mt-3">Report for</h1>
           <h1 class="xm:text-lg sm:text-4xl text-white sm:pb-16 self-start">
-            Luan <br class="xm:hidden sm:block">
-            Cabrito
+            Alex <br class="xm:hidden sm:block">
           </h1>
         </div>
 
