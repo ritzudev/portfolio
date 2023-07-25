@@ -153,10 +153,10 @@
 
 import Work from '../assets/images/icon-work.svg'
 import Play from '../assets/images/icon-play.svg'
-import Study from '../assets/images/icon-Study.svg'
-import Exercise from '../assets/images/icon-Exercise.svg'
-import Social from '../assets/images/icon-Social.svg'
-import SelfCare from '../assets/images/icon-Self-care.svg'
+import Study from '../assets/images/icon-study.svg'
+import Exercise from '../assets/images/icon-exercise.svg'
+import Social from '../assets/images/icon-social.svg'
+import SelfCare from '../assets/images/icon-self-care.svg'
 
 export default {
   data() {
