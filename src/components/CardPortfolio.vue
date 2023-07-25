@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="h-[570px] w-[375px] rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl">
+    <div class="h-[570px] w-full  md:w-[330px] rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl">
         <img class="h-[260px] w-full" src="../assets/rin.png" alt="" />
         <div class="p-4 flex flex-col justify-between h-[310px]">
           <h5 class="text-xl text-center dark:text-white  ">Project Tile goes here</h5>
 
-          <p class="dark:text-white">
+          <p style=" text-overflow: ellipsis; overflow: hidden; -webkit-line-clamp: 5; -webkit-box-orient: vertical; display: -webkit-box;" class="dark:text-white ">
             This is sample project description random things are here in
             description This is sample project lorem ipsum generator for dummy
             content

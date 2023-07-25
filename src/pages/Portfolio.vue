@@ -140,7 +140,7 @@
         Things I’ve built so far
       </h4>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  place-items-center py-10 gap-6 px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3  place-items-center py-10 gap-6 px-6">
       <CardPorfolio />
       <CardPorfolio />
       <CardPorfolio />
