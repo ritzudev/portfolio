@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-[570px] w-full  md:w-[330px] rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl">
+    <div class="h-[570px] w-full rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl">
         <img class="h-[260px] w-full" src="../assets/rin.png" alt="" />
         <div class="p-4 flex flex-col justify-between h-[310px]">
           <h5 class="text-xl text-center dark:text-white  ">Project Tile goes here</h5>

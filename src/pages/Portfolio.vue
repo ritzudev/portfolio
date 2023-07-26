@@ -1,40 +1,58 @@
 <template>
   <div class="min-h-screen dark:bg-[#191919]">
-    <div class="max-w-7xl h-full mx-auto transition-all duration-700 px-6">
-      <header class="py-6">
-        <div class="flex h-12 justify-between dark:text-[#A7A7A7]">
+    <div class="">
+      <header
+        class="py-2  sticky top-0 z-10 dark:bg-transparent backdrop-blur-lg w-full border-b dark:border-gray-600"
+      >
+        <div class="max-w-7xl mx-auto flex h-12 justify-between dark:text-[#A7A7A7] px-6">
           <img src="../assets/dojo-icon.svg" alt="" />
-          <nav class="flex flex-row items-center gap-4" id="header_list">
-            <div class="hidden items-center gap-4 md:flex">
+          <div class="hidden items-center gap-4 md:flex justify-center text-xl">
               <a href="#">Home</a>
               <a href="#">About</a>
               <a href="#">Tech Stack</a>
               <a href="#">Projects</a>
               <a href="#">Contact</a>
             </div>
+          <nav class="flex flex-row items-center gap-4" id="header_list">
+            
             <div class="flex items-center justify-start overflow-hidden gap-4">
               <a href="#" target="_blank">
-                <img src="../assets/svgs/github.svg" alt="logogithub" />
+                <img src="../assets/svgs/github.svg" alt="logo-github" />
               </a>
               <a href="#" target="_blank">
-                <img src="../assets/svgs/linkedin.svg" alt="logolinkedin" />
+                <img src="../assets/svgs/linkedin.svg" alt="logo-linkedin" />
               </a>
 
               <DarkModeVue
                 style="transform-origin: left"
                 class="scale-[0.6] -mr-9"
               />
+              <button
+                class="border-slate-200 border-2 p-2 rounded-lg flex md:hidden"
+                @click="isMenu = !isMenu"
+              >
+                <font-awesome-icon
+                  icon="fa-solid fa-bars"
+                  size="lg"
+                  class="text-black dark:text-[#A7A7A7]"
+                />
+              </button>
+              <div v-if="isMenu" class="absolute right-5 top-16 bg-[#2d2d2d] border-slate-200  p-4 w-56 rounded-lg dark:text-white text-lg">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Tech Stack</a></li>
+                  <li><a href="#">Projects</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
             </div>
-            <font-awesome-icon
-              icon="fa-solid fa-bars"
-              size="xl"
-              class="block md:hidden"
-            />
           </nav>
         </div>
       </header>
-      <main
-        class="grid place-items-center grid-cols-1 md:grid-cols-2 gap-10 dark:text-white py-10"
+      <body class="px-6 max-w-7xl h-full mx-auto transition-all duration-700  ">
+        <main
+        class="grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 dark:text-white py-10"
       >
         <h1 class="text-4xl md:text-6xl">
           Hi
@@ -135,21 +153,22 @@
         />
       </div>
       <div class="flex flex-col text-center">
-      <h1 class="text-4xl dark:text-white">Project</h1>
-      <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
-        Things I’ve built so far
-      </h4>
+        <h1 class="text-4xl dark:text-white">Project</h1>
+        <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
+          Things I’ve built so far
+        </h4>
+      </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center py-10 gap-6"
+      >
+        <CardPortfolio />
+        <CardPortfolio />
+        <CardPortfolio />
+        <CardPortfolio />
+      </div>
+      </body>
+      
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3  place-items-center py-10 gap-6 px-6">
-      <CardPorfolio />
-      <CardPorfolio />
-      <CardPorfolio />
-      <CardPorfolio />
-    </div>
-    </div>
-    
-
-    
 
     <footer class="flex justify-center py-10 dark:text-white">
       <h5>
@@ -160,8 +179,17 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import DarkModeVue from "../components/DarkMode.vue";
-import CardPorfolio from "../components/CardPortfolio.vue";
+import CardPortfolio from "../components/CardPortfolio.vue";
+
+const isMenu = ref(false);
+
+/* export default {
+  data() {
+    return {
+      isMenu:
+ */
 </script>
 
 <style scoped>
@@ -193,5 +221,14 @@ import CardPorfolio from "../components/CardPortfolio.vue";
 .imgStack {
   width: 120px;
   height: 120px;
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+a:hover{
+  border-bottom: 1px solid;
 }
 </style>
