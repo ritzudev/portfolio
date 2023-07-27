@@ -89,14 +89,20 @@
             />
           </div>
         </section>
-        <section id="about" class=" dark:text-white flex">
+        <section id="about" class="min-h-screen dark:text-white flex flex-col xl:flex-row gap-6 py-10">
           
           <div class="">
             <h1 class="text-7xl">About Me</h1>
-            <p class="text-2xl max-w-3xl">The Generator App is an online tool that helps you to export ready-made templates ready to work as your future website. It helps you to combine slides, panels and other components and export it as a set of static files: HTML/CSS/JS.</p>
+            <br>
+            <p class="text-2xl max-w-3xl">The Generator App is an online tool that helps you to export ready-made templates ready to work as your future website.</p>
+            <br>
+            <p class="text-2xl max-w-3xl"> It helps you to combine slides, panels and other components and export it as a set of static files: HTML/CSS/JS.</p>
           
           </div>
-          <img  src="../assets/svgs/undraw_programming.svg" alt="">
+          <div class="md:w-full md:flex md:justify-center">
+            <img class="md:w-[70%] xl:w-full text-center flex "  src="../assets/svgs/undraw_programming.svg" alt="">
+          </div>
+          
         </section>
         <section id="tech" class="flex flex-col text-center min-h-[calc(100vh-65px)] justify-center">
           <h3 class="text-4xl dark:text-white">My Tech Stack</h3>
@@ -191,10 +197,10 @@
           </div>
         </section>
       </body>
-      <section id="contact" class="w-full py-8 h-[676px]">
+      <section id="contact" class="w-full py-8 md:h-[676px]">
         
-        <div class="flex justify-between ">
-          <div class="flex flex-col  h-[612px] justify-between">
+        <div class="flex flex-col md:flex-row justify-between  gap-10">
+          <div class="flex flex-col md:h-[612px] justify-between">
             <div class="flex flex-col gap-6">
               <h1 class="dark:text-white text-7xl ">Contact me</h1>
             <p class="dark:text-white">
