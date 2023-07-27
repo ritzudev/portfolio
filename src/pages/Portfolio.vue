@@ -1,30 +1,34 @@
 <template>
-  <div class="min-h-screen dark:bg-[#191919]">
+  <div class="min-h-screen dark:bg-[#191919] scrollable-container">
     <header
       class="py-2 sticky top-0 z-10 dark:bg-transparent backdrop-blur-lg w-full border-b dark:border-gray-600"
     >
       <div
         class="max-w-7xl mx-auto flex h-12 justify-between dark:text-[#A7A7A7] px-6 items-center"
       >
-       <span class="text-3xl">&ltritzudev&gt</span>
+        <span class="text-2xl hover:animate-shake">&ltritzudev&gt</span>
 
         <div class="hidden items-center gap-4 md:flex justify-center text-xl">
           <a class="links-header" @click="scrollToSection('home')">Home</a>
           <a class="links-header" @click="scrollToSection('about')">About</a>
-          <a class="links-header" @click="scrollToSection('tech')">Tech Stack</a>
+          <a class="links-header" @click="scrollToSection('tech')"
+            >Tech Stack</a
+          >
           <a class="links-header" @click="scrollToSection('projects')"
             >Projects</a
           >
-          <a class="links-header" @click="scrollToSection('contact')">Contact</a>
+          <a class="links-header" @click="scrollToSection('contact')"
+            >Contact</a
+          >
         </div>
         <nav class="flex flex-row items-center gap-4" id="header_list">
           <div class="flex items-center justify-start overflow-hidden gap-4">
-            <a href="#" target="_blank">
+            <!--  <a href="#" target="_blank">
               <img src="../assets/svgs/github.svg" alt="logo-github" />
             </a>
             <a href="#" target="_blank">
               <img src="../assets/svgs/linkedin.svg" alt="logo-linkedin" />
-            </a>
+            </a> -->
 
             <DarkModeVue
               style="transform-origin: left"
@@ -45,15 +49,31 @@
               class="absolute right-5 top-16 bg-[#2d2d2d] border-slate-200 p-4 w-56 rounded-lg dark:text-white text-lg"
             >
               <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Tech Stack</a></li>
                 <li>
-                  <a @click="(isMenu = false), scrollToSection('projects')"
+                  <a class="links-header" @click="scrollToSection('home')"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a class="links-header" @click="scrollToSection('about')"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a class="links-header" @click="scrollToSection('tech')"
+                    >Tech Stack</a
+                  >
+                </li>
+                <li>
+                  <a class="links-header" @click="scrollToSection('projects')"
                     >Projects</a
                   >
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li>
+                  <a class="links-header" @click="scrollToSection('contact')"
+                    >Contact</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
@@ -64,9 +84,9 @@
       <body class="h-full transition-all duration-700">
         <section
           id="home"
-          class="grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 dark:text-white py-10 min-h-[calc(100vh-65px)]"
+          class="grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 dark:text-white min-h-[calc(100vh-65px)]"
         >
-          <h1 class="text-4xl md:text-7xl">
+          <h1 class="text-4xl md:text-5 xl lg:text-7xl">
             Hi
             <span
               class="animate-wiggle-more animate-infinite animate-ease-in-out inline-block"
@@ -89,97 +109,128 @@
             />
           </div>
         </section>
-        <section id="about" class="min-h-screen dark:text-white flex flex-col xl:flex-row gap-6 py-10">
-          
+        <section
+          id="about"
+          class="dark:text-white grid grid-cols-1 lg:grid-cols-3 gap-6 w-full items-center"
+        >
+          <div class="col-span-1 lg:col-span-2">
+            <h1 class="text-5xl text-[#8fbc8f]">About Me</h1>
+            <br />
+            <p class="text-lg max-w-3xl">
+              The Generator App is an online tool that helps you to export
+              ready-made templates ready to work as your future website.
+            </p>
+            <br />
+            <p class="text-lg max-w-3xl">
+              It helps you to combine slides, panels and other components and
+              export it as a set of static files: HTML/CSS/JS.
+            </p>
+            <br />
+
+            <h1 class="text-5xl text-[#8fbc8f]">Work Experience</h1>
+            <br />
+
+            <div class="flex gap-6 flex-col py-6">
+              <ExperienceCard />
+              <ExperienceCard />
+              <ExperienceCard />
+            </div>
+
+            <h1 class="text-5xl text-[#8fbc8f]">Education</h1>
+            <br />
+
+            <div class="flex gap-6 flex-col py-6">
+              <ExperienceCard />
+            </div>
+          </div>
+
           <div class="">
-            <h1 class="text-7xl">About Me</h1>
-            <br>
-            <p class="text-2xl max-w-3xl">The Generator App is an online tool that helps you to export ready-made templates ready to work as your future website.</p>
-            <br>
-            <p class="text-2xl max-w-3xl"> It helps you to combine slides, panels and other components and export it as a set of static files: HTML/CSS/JS.</p>
-          
+            <img
+              class="text-center flex"
+              src="../assets/svgs/undraw_programming.svg"
+              alt=""
+            />
           </div>
-          <div class="md:w-full md:flex md:justify-center">
-            <img class="md:w-[70%] xl:w-full text-center flex "  src="../assets/svgs/undraw_programming.svg" alt="">
-          </div>
-          
         </section>
-        <section id="tech" class="flex flex-col text-center min-h-[calc(100vh-65px)] justify-center">
+        <section
+          id="tech"
+          class="flex flex-col text-center min-h-[calc(100vh-65px)] justify-center"
+        >
           <h3 class="text-4xl dark:text-white">My Tech Stack</h3>
           <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
             Technologies I’ve been working with recently
           </h4>
           <div
-          class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 place-items-center gap-4 py-10"
-        >
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/html-5.svg"
-            alt="html"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/css-3.svg"
-            alt="css"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/javascript.svg"
-            alt="javascript"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/vue.svg"
-            alt="vue"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/bootstrap.svg"
-            alt="bootstrap"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg"
-            alt="tailwind"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/flutter.svg"
-            alt="flutter"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/git-icon.svg"
-            alt="git"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/visual-studio-code.svg"
-            alt="visualstudio"
-          />
-          <img
-            class="imgStack dark:hidden"
-            src="https://cdn.svgporn.com/logos/github-icon.svg"
-            alt="github"
-          />
-          <img
-            class="imgStack hidden dark:block"
-            src="https://logodix.com/logo/64439.png"
-            alt="git"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/nodejs-icon.svg"
-            alt="nodejs"
-          />
-          <img
-            class="imgStack"
-            src="https://cdn.svgporn.com/logos/vuetifyjs.svg"
-            alt="vuetify"
-          />
-        </div>
+            class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 place-items-center gap-4 py-10"
+          >
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/html-5.svg"
+              alt="html"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/css-3.svg"
+              alt="css"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/javascript.svg"
+              alt="javascript"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/vue.svg"
+              alt="vue"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/bootstrap.svg"
+              alt="bootstrap"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg"
+              alt="tailwind"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/flutter.svg"
+              alt="flutter"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/git-icon.svg"
+              alt="git"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/visual-studio-code.svg"
+              alt="visualstudio"
+            />
+            <img
+              class="imgStack dark:hidden"
+              src="https://cdn.svgporn.com/logos/github-icon.svg"
+              alt="github"
+            />
+            <img
+              class="imgStack hidden dark:block"
+              src="https://logodix.com/logo/64439.png"
+              alt="git"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/nodejs-icon.svg"
+              alt="nodejs"
+            />
+            <img
+              class="imgStack"
+              src="https://cdn.svgporn.com/logos/vuetifyjs.svg"
+              alt="vuetify"
+            />
+          </div>
         </section>
-        
+
         <section id="projects" class="flex flex-col text-center">
           <h1 class="text-4xl dark:text-white">Project</h1>
           <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
@@ -198,35 +249,36 @@
         </section>
       </body>
       <section id="contact" class="w-full py-8 md:h-[676px]">
-        
-        <div class="flex flex-col md:flex-row justify-between  gap-10">
+        <div class="flex flex-col md:flex-row justify-between gap-10">
           <div class="flex flex-col md:h-[612px] justify-between">
             <div class="flex flex-col gap-6">
-              <h1 class="dark:text-white text-7xl ">Contact me</h1>
-            <p class="dark:text-white">
-              <font-awesome-icon
-                icon="fa-envelope"
-                size="xl"
-                class="text-[#8fbc8f]"
-              />
+              <h1 class="dark:text-white text-7xl">Contact me</h1>
+              <p class="dark:text-white">
+                <font-awesome-icon
+                  icon="fa-envelope"
+                  size="xl"
+                  class="text-[#8fbc8f]"
+                />
 
-              lexzum10@gmail.com
-            </p>
+                lexzum10@gmail.com
+              </p>
 
-            <p class="dark:text-white">
-              <font-awesome-icon
-                icon="fa-location-dot"
-                size="xl"
-                class="text-[#8fbc8f] w-6"
-              />
+              <p class="dark:text-white">
+                <font-awesome-icon
+                  icon="fa-location-dot"
+                  size="xl"
+                  class="text-[#8fbc8f] w-6"
+                />
 
-              Lima - Perú
-            </p>
+                Lima - Perú
+              </p>
             </div>
 
-            <img class="" src="../assets//svgs/undraw.svg" alt="">
+            <img class="" src="../assets//svgs/undraw.svg" alt="" />
           </div>
-          <div class="w-full md:w-[580px] rounded-xl flex gap-6 flex-col pt-4 pb-6 bg-[#f1f5f9] dark:bg-[#363636] pl-4 pr-6 shadow-2xl border-2 border-[#8fbc8f]">
+          <div
+            class="w-full md:w-[580px] rounded-xl flex gap-6 flex-col pt-4 pb-6 bg-[#f1f5f9] dark:bg-[#363636] pl-4 pr-6 shadow-2xl border-2 border-[#8fbc8f]"
+          >
             <div class="input-contact">
               <span>Name:</span>
               <input type="text" />
@@ -246,7 +298,6 @@
               Submit
             </button>
           </div>
-          
         </div>
       </section>
     </div>
@@ -273,17 +324,22 @@
 import { ref } from "vue";
 import DarkModeVue from "../components/DarkMode.vue";
 import CardPortfolio from "../components/CardPortfolio.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import ExperienceCard from "../components/ExperienceCard.vue";
 
 export default {
   components: {
     DarkModeVue,
     CardPortfolio,
+    FontAwesomeIcon,
+    ExperienceCard,
   },
   setup() {
     const isMenu = ref(false);
 
     function scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
+      this.isMenu = false;
       if (element) {
         const offset =
           element.getBoundingClientRect().top +
@@ -311,10 +367,6 @@ export default {
 * {
   font-family: "Space Mono", monospace;
 }
-
-/* html {
-  scroll-behavior: smooth;
-} */
 
 .pathProfile {
   fill: #666;
@@ -390,22 +442,15 @@ textarea {
 .button-sea-green {
   background-color: rgb(108, 154, 108);
   transition: 0.25s;
- /*  box-shadow: 8px 8px #8fbc8f; */
+  /*  box-shadow: 8px 8px #8fbc8f; */
 }
 
 .button-sea-green:hover,
-.button-sea-green:focus{
-  box-shadow: 
-  inset -11.5em 0 0 0 #9dc59d,
-  inset 11.5em 0 0 0 #9dc59d;
+.button-sea-green:focus {
+  box-shadow: inset -11.5em 0 0 0 #9dc59d, inset 11.5em 0 0 0 #9dc59d;
 }
 
 .close:focus {
-  box-shadow: 
-    inset -3.5em 0 0 0 var(green),
-    inset 3.5em 0 0 0 var(green);  
+  box-shadow: inset -3.5em 0 0 0 var(green), inset 3.5em 0 0 0 var(green);
 }
-
-
-
 </style>
