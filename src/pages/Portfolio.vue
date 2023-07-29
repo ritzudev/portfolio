@@ -1,5 +1,37 @@
 <template>
   <div class="min-h-screen dark:bg-[#191919] scrollable-container">
+    <div
+      class="md:hidden h-14 p-2 text-center w-[50%] backdrop-blur-lg fixed bottom-10 left-[50%] translate-x-[-50%] px-10 grid grid-cols-4 rounded-full"
+    >
+      <a
+        class="hover:bg-green-300 rounded-full h-18 py-2"
+        href="
+      "
+      >
+        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-10"
+      /></a>
+      <a
+        class="hover:bg-green-300 rounded-full h-10"
+        href="
+      "
+      >
+        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-full"
+      /></a>
+      <a
+        class="hover:bg-green-300 rounded-full h-10"
+        href="
+      "
+      >
+        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-full"
+      /></a>
+      <a
+        class="hover:bg-green-300 rounded-full h-10"
+        href="
+      "
+      >
+        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-full"
+      /></a>
+    </div>
     <header
       class="py-2 sticky top-0 z-10 dark:bg-transparent backdrop-blur-lg w-full border-b dark:border-gray-600"
     >
@@ -281,17 +313,24 @@
           >
             <div class="input-contact">
               <span>Name:</span>
-              <input type="text" />
+              <input v-model="formEmail.asunto" type="text" />
             </div>
             <div class="input-contact">
               <span>Email:</span>
-              <input type="text" />
+              <input v-model="formEmail.email" type="text" />
             </div>
             <div class="input-contact">
               <span>Message:</span>
-              <textarea name="" id="" cols="30" rows="11"></textarea>
+              <textarea
+                v-model="formEmail.contenido"
+                name=""
+                id=""
+                cols="30"
+                rows="11"
+              ></textarea>
             </div>
             <button
+              @click="sendMail"
               class="button-sea-green rounded-xl py-4 w-full text-center text-white text-2xl"
               href="#"
             >
@@ -326,6 +365,7 @@ import DarkModeVue from "../components/DarkMode.vue";
 import CardPortfolio from "../components/CardPortfolio.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ExperienceCard from "../components/ExperienceCard.vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -336,6 +376,11 @@ export default {
   },
   setup() {
     const isMenu = ref(false);
+    const formEmail = ref({
+      email: "",
+      asunto: "",
+      contenido: "",
+    });
 
     function scrollToSection(sectionId) {
       const element = document.getElementById(sectionId);
@@ -353,9 +398,25 @@ export default {
       }
     }
 
+    async function sendMail() {
+      const path =  'https://kind-gold-agouti-tutu.cyclic.app/api/';
+      //const path =  'http://192.168.1.13:3000/api/';
+      try {
+        const response = await axios.post(
+           path + 'sendmail',
+          this.formEmail
+        );
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     return {
       isMenu,
+      formEmail,
       scrollToSection,
+      sendMail,
     };
   },
 };

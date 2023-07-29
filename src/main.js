@@ -11,11 +11,11 @@ import {
   faEnvelope,
   faLocationDot,
   faBuilding, 
-  faCalendarAlt
+  faCalendarAlt, faHome
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faBars, faLink, faGithub, faEnvelope, faLocationDot, faBuilding, faCalendarAlt);
+library.add(faBars, faLink, faGithub, faEnvelope, faLocationDot, faBuilding, faCalendarAlt, faHome);
 
 /* const myApp = createApp(App);
 
