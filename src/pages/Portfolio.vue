@@ -1,39 +1,7 @@
 <template>
   <div class="min-h-screen dark:bg-[#191919] scrollable-container">
-    <div
-      class="md:hidden h-14 p-2 text-center w-[50%] backdrop-blur-lg fixed bottom-10 left-[50%] translate-x-[-50%] px-10 grid grid-cols-4 rounded-full"
-    >
-      <a
-        class="hover:bg-green-300 rounded-full h-18 py-2"
-        href="
-      "
-      >
-        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-10"
-      /></a>
-      <a
-        class="hover:bg-green-300 rounded-full h-10"
-        href="
-      "
-      >
-        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-full"
-      /></a>
-      <a
-        class="hover:bg-green-300 rounded-full h-10"
-        href="
-      "
-      >
-        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-full"
-      /></a>
-      <a
-        class="hover:bg-green-300 rounded-full h-10"
-        href="
-      "
-      >
-        <font-awesome-icon icon="fa-home" class="text-[#8fbc8f] h-full"
-      /></a>
-    </div>
     <header
-      class="py-2 sticky top-0 z-10 dark:bg-transparent backdrop-blur-lg w-full border-b dark:border-gray-600"
+      class="py-2 sticky top-0 z-10 bg-white dark:bg-[#191919] w-full border-b dark:border-gray-600"
     >
       <div
         class="max-w-7xl mx-auto flex h-12 justify-between dark:text-[#A7A7A7] px-6 items-center"
@@ -69,6 +37,7 @@
             <button
               class="border-slate-200 border-2 p-2 rounded-lg flex md:hidden"
               @click="isMenu = !isMenu"
+              title=""
             >
               <font-awesome-icon
                 icon="fa-solid fa-bars"
@@ -136,8 +105,8 @@
             <img
               style="clip-path: circle(50% at 50% 50%)"
               class="w-64 h-64 md:w-80 md:h-80"
-              src="../assets/rin.png"
-              alt=""
+              src="../assets/rin.webp"
+              alt="rin"
             />
           </div>
         </section>
@@ -313,26 +282,27 @@
           >
             <div class="input-contact">
               <span>Name:</span>
-              <input v-model="formEmail.asunto" type="text" />
+              <input v-model="formEmail.asunto" type="text" name="name" />
             </div>
             <div class="input-contact">
               <span>Email:</span>
-              <input v-model="formEmail.email" type="text" />
+              <input v-model="formEmail.email" type="email" name="email" />
             </div>
             <div class="input-contact">
               <span>Message:</span>
               <textarea
                 v-model="formEmail.contenido"
-                name=""
+                name="comments"
                 id=""
                 cols="30"
                 rows="11"
               ></textarea>
             </div>
+            <input type="hidden" name="_captcha" value="false" />
             <button
-              @click="sendMail"
               class="button-sea-green rounded-xl py-4 w-full text-center text-white text-2xl"
-              href="#"
+              type="submit"
+              @click="sendMail"
             >
               Submit
             </button>
@@ -349,13 +319,42 @@
       </h5>
       <div class="flex gap-4">
         <a href="#" target="_blank">
-          <img src="../assets/svgs/github.svg" alt="logo-github" />
+          <img
+              class=" dark:hidden h-[30px] w-[30px]"
+              src="https://cdn.svgporn.com/logos/github-icon.svg"
+              alt="github"
+            />
+            <img
+              class=" hidden dark:block h-[30px] w-[30px]"
+              src="https://logodix.com/logo/64439.png"
+              alt="git"
+            />
         </a>
         <a href="#" target="_blank">
           <img src="../assets/svgs/linkedin.svg" alt="logo-linkedin" />
         </a>
       </div>
     </footer>
+    <div
+      class="fixed w-[24%] h-22 dark:bg-white bg-[#66d866] bottom-10 right-10 p-4 rounded-md border-l-8 border-[#49d761] flex items-center justify-between"
+      v-if="isShow"
+    >
+      <font-awesome-icon
+        icon="fa-check-circle"
+        class="text-[#49d761]"
+        size="lg"
+      />
+      <div>
+        <span class="text-lg">Success</span>
+        <p class="text-[#666666]">Mensaje enviado correctamente</p>
+      </div>
+      <font-awesome-icon
+        @click="isShow = false"
+        icon="fa-close"
+        class="text-[#666666]"
+        size="lg"
+      />
+    </div>
   </div>
 </template>
 
@@ -376,6 +375,7 @@ export default {
   },
   setup() {
     const isMenu = ref(false);
+    const isShow = ref(false);
     const formEmail = ref({
       email: "",
       asunto: "",
@@ -399,13 +399,22 @@ export default {
     }
 
     async function sendMail() {
-      const path =  'https://kind-gold-agouti-tutu.cyclic.app/api/';
+      const path = "https://kind-gold-agouti-tutu.cyclic.app/api/";
       //const path =  'http://192.168.1.13:3000/api/';
       try {
-        const response = await axios.post(
-           path + 'sendmail',
-          this.formEmail
-        );
+        const response = await axios.post(path + "sendmail", {
+          asunto: `${this.formEmail.email} - ${this.formEmail.asunto}`,
+          contenido: this.formEmail.contenido,
+        });
+        this.formEmail = {
+          email: "",
+          asunto: "",
+          contenido: "",
+        };
+        this.isShow = true;
+        await setTimeout(() => {
+          this.isShow = false;
+        }, 2000);
         console.log(response);
       } catch (error) {
         console.log(error);
@@ -415,6 +424,7 @@ export default {
     return {
       isMenu,
       formEmail,
+      isShow,
       scrollToSection,
       sendMail,
     };
@@ -477,6 +487,7 @@ h1 {
 .links-header:hover {
   border-bottom: 1px solid;
   color: darkseagreen;
+  cursor: pointer;
 }
 
 input {
@@ -501,7 +512,7 @@ textarea {
 }
 
 .button-sea-green {
-  background-color: rgb(108, 154, 108);
+  background-color: #6c9a6c;
   transition: 0.25s;
   /*  box-shadow: 8px 8px #8fbc8f; */
 }

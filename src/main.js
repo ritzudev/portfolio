@@ -10,12 +10,26 @@ import {
   faLink,
   faEnvelope,
   faLocationDot,
-  faBuilding, 
-  faCalendarAlt, faHome
+  faBuilding,
+  faCalendarAlt,
+  faHome,
+  faClose,
+  faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faBars, faLink, faGithub, faEnvelope, faLocationDot, faBuilding, faCalendarAlt, faHome);
+library.add(
+  faBars,
+  faLink,
+  faGithub,
+  faEnvelope,
+  faLocationDot,
+  faBuilding,
+  faCalendarAlt,
+  faHome,
+  faClose,
+  faCheckCircle
+);
 
 /* const myApp = createApp(App);
 

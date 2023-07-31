@@ -3,7 +3,7 @@
     <div
       class="h-[570px] w-full rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl"
     >
-      <img class="h-[260px] w-full" src="../assets/rin.png" alt="" />
+      <img class="h-[260px] w-full" src="../assets/rin.webp" alt="" />
       <div class="p-4 flex flex-col justify-between h-[310px]">
         <h5 class="text-xl text-center dark:text-white">
           Project Tile goes here
@@ -46,7 +46,6 @@
               viewBox="0 0 16 16"
             >
               <path
-              
                 d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
               />
             </svg>
@@ -64,12 +63,12 @@
 <script setup></script>
 
 <style scoped>
+
 .button-sea-green {
-  background-color: rgb(108, 154, 108);;
+  background-color: #6c9a6c;
 }
 .button-sea-green:hover {
- /*  transition: all 600ms ease-in-out; */
-  background-color: rgb(143, 188, 143, 0.9  )
-  
+  /*  transition: all 600ms ease-in-out; */
+  background-color: rgb(143, 188, 143, 0.9);
 }
 </style>
