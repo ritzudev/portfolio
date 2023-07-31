@@ -3,7 +3,7 @@
     <div
       class="h-[570px] w-full rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl"
     >
-      <img class="h-[260px] w-full" src="../assets/rin.webp" alt="" />
+      <img class="h-[260px] w-[583px] sm:w-[475px] lg:w-[396px] " src="../assets/rin.webp" alt="" />
       <div class="p-4 flex flex-col justify-between h-[310px]">
         <h5 class="text-xl text-center dark:text-white">
           Project Tile goes here

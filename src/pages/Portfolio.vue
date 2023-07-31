@@ -145,11 +145,10 @@
             </div>
           </div>
 
-          <div class="">
+          <div class="flex justify-center">
             <img
-              class="text-center flex"
               src="../assets/svgs/undraw_programming.svg"
-              alt=""
+              alt="svg-programming"
             />
           </div>
         </section>
@@ -317,7 +316,7 @@
       <h5>
         Designed and built by Ritzudev <span class="text-[#8fbc8f]">❤</span>
       </h5>
-      <div class="flex gap-4">
+      <div class="flex gap-4 items-center">
         <a href="#" target="_blank">
           <img
               class=" dark:hidden h-[30px] w-[30px]"
