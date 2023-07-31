@@ -37,7 +37,8 @@
             <button
               class="border-slate-200 border-2 p-2 rounded-lg flex md:hidden"
               @click="isMenu = !isMenu"
-              title=""
+              title="menu-list"
+              
             >
               <font-awesome-icon
                 icon="fa-solid fa-bars"

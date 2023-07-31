@@ -40,6 +40,7 @@ export default {
       v-model="isDark"
       class="dn"
       id="checkbox1"
+      aria-label="change-theme"
     />
     <label for="checkbox1" class="toggle">
       <span class="toggle__handler">
