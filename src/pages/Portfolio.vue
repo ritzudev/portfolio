@@ -1,87 +1,6 @@
 <template>
   <div class="min-h-screen dark:bg-[#191919] scrollable-container">
-    <header
-      class="py-2 sticky top-0 z-10 bg-white dark:bg-[#191919] w-full border-b dark:border-gray-600"
-    >
-      <div
-        class="max-w-7xl mx-auto flex h-12 justify-between dark:text-[#A7A7A7] px-6 items-center"
-      >
-        <span class="text-2xl hover:animate-shake">&ltritzudev&gt</span>
-
-        <div class="hidden items-center gap-4 md:flex justify-center text-xl">
-          <a class="links-header" @click="scrollToSection('home')">Home</a>
-          <a class="links-header" @click="scrollToSection('about')">About</a>
-          <a class="links-header" @click="scrollToSection('tech')"
-            >Tech Stack</a
-          >
-          <a class="links-header" @click="scrollToSection('projects')"
-            >Projects</a
-          >
-          <a class="links-header" @click="scrollToSection('contact')"
-            >Contact</a
-          >
-        </div>
-        <nav class="flex flex-row items-center gap-4" id="header_list">
-          <div class="flex items-center justify-start overflow-hidden gap-4">
-            <!--  <a href="#" target="_blank">
-              <img src="../assets/svgs/github.svg" alt="logo-github" />
-            </a>
-            <a href="#" target="_blank">
-              <img src="../assets/svgs/linkedin.svg" alt="logo-linkedin" />
-            </a> -->
-
-            <DarkModeVue
-              style="transform-origin: left"
-              class="scale-[0.6] -mr-9"
-            />
-            <button
-              class="border-slate-200 border-2 p-2 rounded-lg flex md:hidden"
-              @click="isMenu = !isMenu"
-              title="menu-list"
-              
-            >
-              <font-awesome-icon
-                icon="fa-solid fa-bars"
-                size="lg"
-                class="text-black dark:text-[#A7A7A7]"
-              />
-            </button>
-            <div
-              v-if="isMenu"
-              class="absolute right-5 top-16 bg-[#2d2d2d] border-slate-200 p-4 w-56 rounded-lg dark:text-white text-lg"
-            >
-              <ul>
-                <li>
-                  <a class="links-header" @click="scrollToSection('home')"
-                    >Home</a
-                  >
-                </li>
-                <li>
-                  <a class="links-header" @click="scrollToSection('about')"
-                    >About</a
-                  >
-                </li>
-                <li>
-                  <a class="links-header" @click="scrollToSection('tech')"
-                    >Tech Stack</a
-                  >
-                </li>
-                <li>
-                  <a class="links-header" @click="scrollToSection('projects')"
-                    >Projects</a
-                  >
-                </li>
-                <li>
-                  <a class="links-header" @click="scrollToSection('contact')"
-                    >Contact</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <HeaderPort />
     <div class="px-6 max-w-7xl mx-auto">
       <body class="h-full transition-all duration-700">
         <section
@@ -113,7 +32,7 @@
         </section>
         <section
           id="about"
-          class="dark:text-white grid grid-cols-1 lg:grid-cols-3 gap-6 w-full items-center"
+          class="dark:text-white grid grid-cols-1 lg:grid-cols-3 gap-6 w-full items-center py-4"
         >
           <div class="col-span-1 lg:col-span-2">
             <h1 class="text-5xl text-[#8fbc8f]">About Me</h1>
@@ -138,12 +57,7 @@
               <ExperienceCard />
             </div>
 
-            <h1 class="text-5xl text-[#8fbc8f]">Education</h1>
-            <br />
-
-            <div class="flex gap-6 flex-col py-6">
-              <ExperienceCard />
-            </div>
+            <EducationPort />
           </div>
 
           <div class="flex justify-center">
@@ -155,7 +69,7 @@
         </section>
         <section
           id="tech"
-          class="flex flex-col text-center min-h-[calc(100vh-65px)] justify-center"
+          class="flex flex-col text-center min-h-[calc(100vh-80px)] justify-center"
         >
           <h3 class="text-4xl dark:text-white">My Tech Stack</h3>
           <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
@@ -243,9 +157,6 @@
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center py-10 gap-6"
           >
             <CardPortfolio />
-            <CardPortfolio />
-            <CardPortfolio />
-            <CardPortfolio />
           </div>
         </section>
       </body>
@@ -303,6 +214,7 @@
               class="button-sea-green rounded-xl py-4 w-full text-center text-white text-2xl"
               type="submit"
               @click="sendMail"
+              :disabled="isLoading"
             >
               Submit
             </button>
@@ -311,50 +223,64 @@
       </section>
     </div>
 
-    <footer
-      class="flex justify-between max-w-7xl mx-auto py-10 dark:text-white px-6"
-    >
-      <h5>
-        Designed and built by Ritzudev <span class="text-[#8fbc8f]">❤</span>
-      </h5>
-      <div class="flex gap-4 items-center">
-        <a href="#" target="_blank">
-          <img
-              class=" dark:hidden h-[30px] w-[30px]"
-              src="https://cdn.svgporn.com/logos/github-icon.svg"
-              alt="github"
-            />
-            <img
-              class=" hidden dark:block h-[30px] w-[30px]"
-              src="https://logodix.com/logo/64439.png"
-              alt="git"
-            />
-        </a>
-        <a href="#" target="_blank">
-          <img src="../assets/svgs/linkedin.svg" alt="logo-linkedin" />
-        </a>
-      </div>
-    </footer>
+    <FooterPort />
     <div
-      class="fixed w-[24%] h-22 dark:bg-white bg-[#66d866] bottom-10 right-10 p-4 rounded-md border-l-8 border-[#49d761] flex items-center justify-between"
+      :class="[
+        isLoading
+          ? 'w-[90%] md:w-80 border-[#666]'
+          : 'h-[5.5rem] w-[90%] md:w-[440px] border-[#49d761]',
+      ]"
+      class="fixed bg-white shadow-2xl border-2 bottom-10 right-6 xl:right-10 p-4 rounded-md border-l-8 flex items-center gap-4 transition-all duration-1000 ease-in-out"
       v-if="isShow"
     >
-      <font-awesome-icon
-        icon="fa-check-circle"
-        class="text-[#49d761]"
-        size="lg"
-      />
-      <div>
-        <span class="text-lg">Success</span>
-        <p class="text-[#666666]">Mensaje enviado correctamente</p>
+      <span v-if="isLoading" class="flex justify-center w-full">
+        <svg
+          class="animate-spin -ml-1 mr-3 h-6 w-6 text-black"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+        Processing...
+      </span>
+
+      <div v-else class="flex flex-row items-center w-full gap-4">
+        <font-awesome-icon
+          icon="fa-check-circle"
+          class="text-[#49d761]"
+          size="lg"
+        />
+        <div class="flex-grow overflow-hidden">
+          <span class="text-lg">Success</span>
+          <p style="white-space: nowrap; overflow: hidden" class="text-[#666]">
+            Mensaje enviado correctamente
+          </p>
+        </div>
+        <font-awesome-icon
+          @click="isShow = false"
+          icon="fa-close"
+          class="text-[#666] cursor-pointer"
+          size="lg"
+        />
       </div>
-      <font-awesome-icon
-        @click="isShow = false"
-        icon="fa-close"
-        class="text-[#666666]"
-        size="lg"
-      />
     </div>
+    <!-- <div
+      style="background-color: var(--greenP)"
+      class="absolute w-20 h-10 top-0 -z-10 left-[1000px]"
+    ></div> -->
   </div>
 </template>
 
@@ -362,6 +288,9 @@
 import { ref } from "vue";
 import DarkModeVue from "../components/DarkMode.vue";
 import CardPortfolio from "../components/CardPortfolio.vue";
+import HeaderPort from "../components/portfolio/Header.vue";
+import EducationPort from "../components/portfolio/Education.vue";
+import FooterPort from "../components/portfolio/Footer.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ExperienceCard from "../components/ExperienceCard.vue";
 import axios from "axios";
@@ -372,10 +301,14 @@ export default {
     CardPortfolio,
     FontAwesomeIcon,
     ExperienceCard,
+    HeaderPort,
+    EducationPort,
+    FooterPort,
   },
   setup() {
     const isMenu = ref(false);
     const isShow = ref(false);
+    const isLoading = ref(false);
     const formEmail = ref({
       email: "",
       asunto: "",
@@ -399,6 +332,8 @@ export default {
     }
 
     async function sendMail() {
+      this.isShow = true;
+      this.isLoading = true;
       const path = "https://kind-gold-agouti-tutu.cyclic.app/api/";
       //const path =  'http://192.168.1.13:3000/api/';
       try {
@@ -411,10 +346,12 @@ export default {
           asunto: "",
           contenido: "",
         };
-        this.isShow = true;
+
+        this.isLoading = false;
+
         await setTimeout(() => {
           this.isShow = false;
-        }, 2000);
+        }, 5000);
         console.log(response);
       } catch (error) {
         console.log(error);
@@ -425,6 +362,7 @@ export default {
       isMenu,
       formEmail,
       isShow,
+      isLoading,
       scrollToSection,
       sendMail,
     };
