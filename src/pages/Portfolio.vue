@@ -3,6 +3,7 @@
     <HeaderPort />
     <div class="px-6 max-w-7xl mx-auto">
       <body class="h-full transition-all duration-700">
+        <!-- <ModelViewer /> -->
         <section
           id="home"
           class="grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 dark:text-white min-h-[calc(100vh-65px)]"
@@ -18,6 +19,7 @@
             <span id="textName"> Alex FZ</span>, a <br />
             Front End Development
           </h1>
+          
           <div
             style="clip-path: circle(50% at 50% 50%)"
             class="p-1 bg-gradient-to-r from-sky-500 to-emerald-400"
@@ -25,7 +27,7 @@
             <img
               style="clip-path: circle(50% at 50% 50%)"
               class="w-64 h-64 md:w-80 md:h-80"
-              src="../assets/rin.webp"
+              src="../assets/images_port/myAvatar.svg"
               alt="rin"
             />
           </div>
@@ -38,13 +40,15 @@
             <h1 class="text-5xl text-[#8fbc8f]">About Me</h1>
             <br />
             <p class="text-lg max-w-3xl">
-              The Generator App is an online tool that helps you to export
-              ready-made templates ready to work as your future website.
+              ¡Hola! Soy Alex, un entusiasta del desarrollo front-end con 3 años
+              de experiencia con el framework de Vue.
             </p>
             <br />
             <p class="text-lg max-w-3xl">
-              It helps you to combine slides, panels and other components and
-              export it as a set of static files: HTML/CSS/JS.
+              Especializado en HTML, CSS y JavaScript, tengo experiencia en
+              frameworks como Vue. Siempre estoy buscando formas de
+              aprender y crecer en el siempre cambiante mundo del desarrollo
+              web.
             </p>
             <br />
 
@@ -52,8 +56,6 @@
             <br />
 
             <div class="flex gap-6 flex-col py-6">
-              <ExperienceCard />
-              <ExperienceCard />
               <ExperienceCard />
             </div>
 
@@ -67,94 +69,19 @@
             />
           </div>
         </section>
-        <section
-          id="tech"
-          class="flex flex-col text-center min-h-[calc(100vh-80px)] justify-center"
-        >
-          <h3 class="text-4xl dark:text-white">My Tech Stack</h3>
-          <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
-            Technologies I’ve been working with recently
-          </h4>
-          <div
-            class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 place-items-center gap-4 py-10"
-          >
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/html-5.svg"
-              alt="html"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/css-3.svg"
-              alt="css"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/javascript.svg"
-              alt="javascript"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/vue.svg"
-              alt="vue"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/bootstrap.svg"
-              alt="bootstrap"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg"
-              alt="tailwind"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/flutter.svg"
-              alt="flutter"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/git-icon.svg"
-              alt="git"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/visual-studio-code.svg"
-              alt="visualstudio"
-            />
-            <img
-              class="imgStack dark:hidden"
-              src="https://cdn.svgporn.com/logos/github-icon.svg"
-              alt="github"
-            />
-            <img
-              class="imgStack hidden dark:block"
-              src="https://logodix.com/logo/64439.png"
-              alt="git"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/nodejs-icon.svg"
-              alt="nodejs"
-            />
-            <img
-              class="imgStack"
-              src="https://cdn.svgporn.com/logos/vuetifyjs.svg"
-              alt="vuetify"
-            />
-          </div>
-        </section>
+        <StackPort />
 
-        <section id="projects" class="flex flex-col text-center">
+        <section
+          id="projects"
+          class="flex flex-col text-center min-h-[calc(100vh-65px)] py-10"
+        >
           <h1 class="text-4xl dark:text-white">Project</h1>
           <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
             Things I’ve built so far
           </h4>
-        </section>
-        <section>
+
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center py-10 gap-6"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center py-10 gap-6 text-start"
           >
             <CardPortfolio />
           </div>
@@ -290,7 +217,9 @@ import DarkModeVue from "../components/DarkMode.vue";
 import CardPortfolio from "../components/CardPortfolio.vue";
 import HeaderPort from "../components/portfolio/Header.vue";
 import EducationPort from "../components/portfolio/Education.vue";
+import StackPort from "../components/portfolio/Stack.vue";
 import FooterPort from "../components/portfolio/Footer.vue";
+import ModelViewer from "../components/portfolio/ModelViewer.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ExperienceCard from "../components/ExperienceCard.vue";
 import axios from "axios";
@@ -303,7 +232,9 @@ export default {
     ExperienceCard,
     HeaderPort,
     EducationPort,
+    StackPort,
     FooterPort,
+    ModelViewer,
   },
   setup() {
     const isMenu = ref(false);
@@ -407,25 +338,9 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
-.imgStack {
-  width: 120px;
-  height: 120px;
-}
-
 .backdrop-blur-lg {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-}
-
-.links-header {
-  /* padding: 0px 10px;
-  margin: 0px 2px;
-  border-radius: 8px; */
-}
-.links-header:hover {
-  border-bottom: 1px solid;
-  color: darkseagreen;
-  cursor: pointer;
 }
 
 input {

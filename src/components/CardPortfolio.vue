@@ -2,13 +2,13 @@
   <div
     v-for="(item, index) in projectsCard"
     :key="index"
-    class="h-[570px] w-full rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl"
+    class="h-[570px] w-full rounded-lg overflow-hidden bg-white dark:bg-[#363636] shadow-2xl border dark:border-none"
   >
-    <div class="h-[260px] w-[583px] sm:w-full lg:w-full group overflow-hidden hover:scale-[0.96] transition-all  duration-1000 rounded-lg" >
+    <div class="h-[260px] p-2 w-[583px] sm:w-full lg:w-full group overflow-hidden hover:scale-[1] transition-all  duration-[850ms] rounded-lg" >
       <img
       class="h-full w-full group-hover:scale-[1.5] transition-all  duration-1000 rounded-lg"
       :src="item.image"
-      alt=""
+      :alt="item.name"
     />
     </div>
     <div class="p-4 flex flex-col h-[310px] gap-4">
@@ -41,7 +41,7 @@
               <font-awesome-icon icon="fa-brands fa-github" />
               <a href="#">View Code</a>
             </div> -->
-        <a :href="item.github_link" class="bg-slate-400 rounded-xl p-2">
+        <a :href="item.github_link" class="bg-slate-400 opacity-80 hover:opacity-100 rounded-xl p-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
@@ -71,20 +71,32 @@
 import { ref } from "vue";
 
 import WeatherI from '../assets/images_port/weather-app.png'
+import BVBEscudo from '../assets/images_port/bvb-escudo.jpg'
+import RickMortyI from '../assets/images_port/rick&morty.png'
+import TipsCalculator from '../assets/images_port/tips-calculator.png'
 
 const projectsCard = ref([
   {
-    name: "Weather App",
-    image: WeatherI,
+    name: "BVB News Blog",
+    image: BVBEscudo,
+    description:
+      "Weather app, this is sample project description random things are here in description",
+    github_link: "https://github.com/ritzudev/newsbvb",
+    page_link: "https://newsbvb.netlify.app/",
+    stack: " HTML, Tailwind, JavaScript, Vue",
+  },
+  {
+    name: "Tips Calculator",
+    image: TipsCalculator,
     description:
       "Weather app, this is sample project description random things are here in description",
     github_link: "https://github.com/ritzudev/weather-app",
     page_link: "https://weather-app-ritzu.netlify.app/",
-    stack: " HTML, Tailwind, JavaScript, NextJS",
+    stack: " HTML, JavaScript, Vue",
   },
   {
-    name: "Weather App",
-    image: WeatherI,
+    name: "Rick & Morty",
+    image: RickMortyI,
     description:
       "Weather app, this is sample project description random things are here in description",
     github_link: "https://github.com/ritzudev/weather-app",
@@ -105,10 +117,12 @@ const projectsCard = ref([
 
 <style scoped>
 .button-sea-green {
-  background-color: #6c9a6c;
+  background-color: #73b173;
+  opacity: 0.80;
 }
 .button-sea-green:hover {
   /*  transition: all 600ms ease-in-out; */
-  background-color: rgb(143, 188, 143, 0.9);
+  /* background-color: rgb(143, 188, 143, 0.9); */
+  opacity: 1;
 }
 </style>

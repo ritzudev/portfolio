@@ -1,14 +1,11 @@
 <template>
-  <div class="pt-2">
+  <div class="pt-2 ">
     <header>
-      <nav class="flex h-12 justify-between px-5">
-        <img src="../assets/dojo-icon.svg" alt="" />
+      <nav class="flex h-12 justify-end px-5">
+       
         <ul class="flex flex-row items-center" id="header_list">
-          <!-- <li class="mx-4"><a href="#">Docs</a></li>
-          <li class="mx-4"><a href="#">About</a></li> -->
           <li class="mx-4">
-            <button
-              @click="joke"
+            <!-- <button
               class="
                 border-2 border-green-500
                 py-1
@@ -20,21 +17,8 @@
                 sm:block
               "
             >
-              TERRY PAVO (BROMITA)
-            </button>
-            <button
-              class="
-                sm:hidden
-                border-2 border-green-500
-                py-1
-                px-3
-                hover:bg-green-500 hover:text-white
-                rounded-lg
-                hover:transition-all hover:duration-500
-              "
-            >
-              A
-            </button>
+              RITZUDEV
+            </button> -->
           </li>
         </ul>
       </nav>
@@ -384,6 +368,12 @@ export default {
 
 <style scoped>
 /* From uiverse.io by @alexruix */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  font-family: "Space Mono", monospace;
+}
+
 .group {
   display: flex;
   line-height: 28px;

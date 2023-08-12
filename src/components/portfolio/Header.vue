@@ -117,3 +117,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.links-header {
+  /* padding: 0px 10px;
+  margin: 0px 2px;
+  border-radius: 8px; */
+}
+.links-header:hover {
+  border-bottom: 1px solid;
+  color: darkseagreen;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 300ms;
+  animation: ease-in-out;
+}
+</style>

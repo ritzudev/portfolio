@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section id="Education">
     <h1 class="text-5xl text-[#8fbc8f] pb-4">Education</h1>
     <br />
     <div class="flex flex-col gap-4 border-b-2 border-[#bce0bc] pb-6">
@@ -17,7 +17,7 @@
             size="lg"
             class="text-[#8fbc8f]"
           />
-          <p>Senati</p>
+          <p>SENATI</p>
         </div>
         <div class="flex gap-4 items-center">
           <font-awesome-icon
@@ -29,9 +29,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup></script>
 
 <style scoped></style>
