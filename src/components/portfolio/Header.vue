@@ -9,16 +9,16 @@
 
       <nav class="z-20 relative">
         <div class="hidden items-center gap-4 md:flex justify-center text-xl">
-          <a class="links-header" @click="scrollToSection('home')">Home</a>
-          <a class="links-header" @click="scrollToSection('about')">About</a>
+          <!--  <a class="links-header" @click="scrollToSection('home')">Home</a> -->
+          <a class="links-header" @click="scrollToSection('about')">Sobre Mí</a>
           <a class="links-header" @click="scrollToSection('tech')"
-            >Tech Stack</a
+            >Habilidades</a
           >
-          <a class="links-header" @click="scrollToSection('projects')"
-            >Projects</a
+          <a class="links-header" @click="scrollToSection('Proyectos')"
+            >Proyectos</a
           >
           <a class="links-header" @click="scrollToSection('contact')"
-            >Contact</a
+            >Contacto</a
           >
         </div>
       </nav>
@@ -64,12 +64,12 @@
               </li>
               <li>
                 <a class="links-header" @click="scrollToSection('tech')"
-                  >Tech Stack</a
+                  >Habilidades</a
                 >
               </li>
               <li>
-                <a class="links-header" @click="scrollToSection('projects')"
-                  >Projects</a
+                <a class="links-header" @click="scrollToSection('Proyectos')"
+                  >Proyectos</a
                 >
               </li>
               <li>

@@ -3,12 +3,12 @@
     id="tech"
     class="flex flex-col text-center min-h-[calc(100vh-80px)] justify-center"
   >
-    <h3 class="text-4xl dark:text-white">My Tech Stack</h3>
+    <h3 class="text-4xl dark:text-white">Mis Habilidades</h3>
     <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
-      Technologies I’ve been working with recently
+      Tecnologías con las que he estado trabajando recientemente
     </h4>
     <div
-      class="grid grid-cols-3  sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 place-items-center gap-4 py-10"
+      class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 place-items-center gap-4 py-10"
     >
       <img
         class="imgStack"
@@ -89,8 +89,8 @@
 
 @media (min-width: 640px) {
   .imgStack {
-  width: 120px;
-  height: 120px;
-}
+    width: 120px;
+    height: 120px;
+  }
 }
 </style>

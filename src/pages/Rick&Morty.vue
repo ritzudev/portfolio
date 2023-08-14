@@ -40,7 +40,7 @@
         </h1>
         <div>
           <svg
-            style="fill: rgb(245, 245, 245)"
+            style="fill: rgb(0, 0, 0, 0.2)"
             width="378"
             height="376"
             viewBox="0 0 378 376"

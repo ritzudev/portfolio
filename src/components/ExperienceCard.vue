@@ -1,5 +1,9 @@
 <template>
-  <div v-for="(item, index) in experience" :key="index" class="flex flex-col gap-4 border-b-2 border-[#bce0bc] pb-6">
+  <div
+    v-for="(item, index) in experience"
+    :key="index"
+    class="flex flex-col gap-4 border-b-2 border-[#bce0bc] pb-6"
+  >
     <div class="flex justify-between items-center">
       <span class="text-xl text-[#666666]">{{ item.puesto }}</span>
       <span
@@ -14,7 +18,7 @@
           size="lg"
           class="text-[#8fbc8f]"
         />
-        <p>{{item.name}}</p>
+        <p>{{ item.name }}</p>
       </div>
       <div class="flex gap-4 items-center">
         <font-awesome-icon
@@ -22,9 +26,12 @@
           size="lg"
           class="text-[#8fbc8f]"
         />
-        <p>{{item.date}}</p>
+        <p>{{ item.date }}</p>
       </div>
     </div>
+    <p class="text-[#3a3838]">
+      {{ item.description }}
+    </p>
   </div>
 </template>
 
@@ -35,12 +42,15 @@ const experience = ref([
   {
     puesto: "Junior Web Developer",
     name: "Telemovil Data SAC",
-    date: "Jan 2021 - July 2023",
+    date: "Enero 2021 - Junio 2023",
+    description: "Tuve la emocionante oportunidad de contribuir al desarrollo y mejora de la plataforma de facturación electrónica utilizando el framework VUE.JS y crear la aplicación movil con FLUTTER. Mi enfoque principal era garantizar una experiencia de usuario fluida y eficiente al corregir problemas existentes, implementar nuevas funciones y gestionar la emision de comprobantes electronicos consumiendo una API REST.",
   },
   {
-    puesto: "Software Development Intern",
+    puesto: "Practicante de Desarrollo de Software",
     name: "Telemovil Data SAC",
-    date: "Jun 2019 - Jan 2021",
+    date: "Julio 2019 - Enero 2021",
+    description:
+      "Realice prácticas pre profesionales y adquirí experiencia en el manejo de bases de datos y también fortalecí mis habilidades en desarrollo web. Trabajé en  colaboración con el equipo de sistemas para corregir errores de bases de datos.",
   },
 ]);
 </script>

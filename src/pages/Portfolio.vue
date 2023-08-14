@@ -9,17 +9,17 @@
           class="grid place-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 dark:text-white min-h-[calc(100vh-65px)]"
         >
           <h1 class="text-4xl md:text-5 xl lg:text-7xl">
-            Hi
+            Hola
             <span
               class="animate-wiggle-more animate-infinite animate-ease-in-out inline-block"
               >👋</span
             >, <br />
 
-            My name is <br />
-            <span id="textName"> Alex FZ</span>, a <br />
+            Mi nombre es <br />
+            <span id="textName"> Alex FZ</span>, <br />
             Front End Development
           </h1>
-          
+
           <div
             style="clip-path: circle(50% at 50% 50%)"
             class="p-1 bg-gradient-to-r from-sky-500 to-emerald-400"
@@ -37,22 +37,21 @@
           class="dark:text-white grid grid-cols-1 lg:grid-cols-3 gap-6 w-full items-center py-4"
         >
           <div class="col-span-1 lg:col-span-2">
-            <h1 class="text-5xl text-[#8fbc8f]">About Me</h1>
+            <h1 class="text-5xl text-[#8fbc8f]">Sobre Mí</h1>
             <br />
             <p class="text-lg max-w-3xl">
-              ¡Hola! Soy Alex, un entusiasta del desarrollo front-end con 3 años
+              ¡Hola! Soy Alex, un entusiasta del desarrollo front-end con más de 2 años
               de experiencia con el framework de Vue.
             </p>
             <br />
             <p class="text-lg max-w-3xl">
               Especializado en HTML, CSS y JavaScript, tengo experiencia en
-              frameworks como Vue. Siempre estoy buscando formas de
-              aprender y crecer en el siempre cambiante mundo del desarrollo
-              web.
+              frameworks como Vue. Siempre estoy buscando formas de aprender y
+              crecer en el siempre cambiante mundo del desarrollo web.
             </p>
             <br />
 
-            <h1 class="text-5xl text-[#8fbc8f]">Work Experience</h1>
+            <h1 class="text-5xl text-[#8fbc8f]">Experiencia</h1>
             <br />
 
             <div class="flex gap-6 flex-col py-6">
@@ -72,14 +71,10 @@
         <StackPort />
 
         <section
-          id="projects"
+          id="Proyectos"
           class="flex flex-col text-center min-h-[calc(100vh-65px)] py-10"
         >
-          <h1 class="text-4xl dark:text-white">Project</h1>
-          <h4 class="text-2xl text-[#666666] dark:text-[#A7A7A7]">
-            Things I’ve built so far
-          </h4>
-
+          <h1 class="text-4xl dark:text-white">Proyectos</h1>
           <div
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center py-10 gap-6 text-start"
           >
@@ -91,7 +86,7 @@
         <div class="flex flex-col md:flex-row justify-between gap-10">
           <div class="flex flex-col md:h-[612px] justify-between">
             <div class="flex flex-col gap-6">
-              <h1 class="dark:text-white text-7xl">Contact me</h1>
+              <h1 class="dark:text-white text-7xl">Contacto</h1>
               <p class="dark:text-white">
                 <font-awesome-icon
                   icon="fa-envelope"
@@ -119,7 +114,7 @@
             class="w-full md:w-[580px] rounded-xl flex gap-6 flex-col pt-4 pb-6 bg-[#f1f5f9] dark:bg-[#363636] pl-4 pr-6 shadow-2xl border-2 border-[#8fbc8f]"
           >
             <div class="input-contact">
-              <span>Name:</span>
+              <span>Nombre:</span>
               <input v-model="formEmail.asunto" type="text" name="name" />
             </div>
             <div class="input-contact">
@@ -127,7 +122,7 @@
               <input v-model="formEmail.email" type="email" name="email" />
             </div>
             <div class="input-contact">
-              <span>Message:</span>
+              <span>Mensaje:</span>
               <textarea
                 v-model="formEmail.contenido"
                 name="comments"
@@ -143,7 +138,7 @@
               @click="sendMail"
               :disabled="isLoading"
             >
-              Submit
+              Enviar
             </button>
           </div>
         </div>
@@ -181,7 +176,7 @@
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           ></path>
         </svg>
-        Processing...
+        Procesando...
       </span>
 
       <div v-else class="flex flex-row items-center w-full gap-4">
