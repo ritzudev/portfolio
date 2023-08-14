@@ -29,7 +29,7 @@
         <p>{{ item.date }}</p>
       </div>
     </div>
-    <p class="text-[#3a3838]">
+    <p class="text-[#3a3838] dark:text-white">
       {{ item.description }}
     </p>
   </div>
