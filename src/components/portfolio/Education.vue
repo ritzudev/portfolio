@@ -1,6 +1,6 @@
 <template>
   <section id="Education">
-    <h1 class="text-5xl text-[#8fbc8f] pb-4">Education</h1>
+    <h1 class="text-5xl text-[#8fbc8f] pb-4">Educación</h1>
     <br />
     <div class="flex flex-col gap-4 border-b-2 border-[#bce0bc] pb-6">
       <div class="flex justify-between items-center">
@@ -25,7 +25,7 @@
             size="lg"
             class="text-[#8fbc8f]"
           />
-          <p>Jan 2018 - Dec 2020</p>
+          <p>Enero 2018 - Diciembre 2020</p>
         </div>
       </div>
     </div>

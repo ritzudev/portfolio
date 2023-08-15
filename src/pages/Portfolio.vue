@@ -186,7 +186,7 @@
           size="lg"
         />
         <div class="flex-grow overflow-hidden">
-          <span class="text-lg">Success</span>
+          <span class="text-lg">Enviado</span>
           <p style="white-space: nowrap; overflow: hidden" class="text-[#666]">
             Mensaje enviado correctamente
           </p>
