@@ -43,7 +43,8 @@ const experience = ref([
     puesto: "Junior Web Developer",
     name: "Telemovil Data SAC",
     date: "Enero 2021 - Junio 2023",
-    description: "Tuve la emocionante oportunidad de contribuir al desarrollo y mejora de la plataforma de facturación electrónica utilizando el framework VUE.JS y crear la aplicación movil con FLUTTER. Mi enfoque principal era garantizar una experiencia de usuario fluida y eficiente al corregir problemas existentes, implementar nuevas funciones y gestionar la emision de comprobantes electronicos consumiendo una API REST.",
+    description:
+      "Tuve la emocionante oportunidad de contribuir al desarrollo y mejora de la plataforma de facturación electrónica utilizando el framework VUE.JS y crear la aplicación movil con FLUTTER. Mi enfoque principal era garantizar una experiencia de usuario fluida y eficiente al corregir problemas existentes, implementar nuevas funciones y gestionar la emisión de comprobantes electronicos consumiendo una API REST.",
   },
   {
     puesto: "Practicante de Desarrollo de Software",
