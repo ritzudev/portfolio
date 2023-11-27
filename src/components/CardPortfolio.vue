@@ -14,7 +14,7 @@
       />
     </div>
     <div class="p-4 flex flex-col h-[340px] gap-4">
-      <h5 class="text-xl text-center dark:text-white">
+      <h5 class="text-3xl text-center dark:text-white">
         {{ item.name }}
       </h5>
 
@@ -75,12 +75,22 @@
 <script setup>
 import { ref } from "vue";
 
+import PokedexI from "../assets/images_port/pokeball-cover.jpg";
 import WeatherI from "../assets/images_port/weather-app.png";
 import BVBEscudo from "../assets/images_port/bvb-escudo.jpg";
 import RickMortyI from "../assets/images_port/rick&morty.png";
 import TipsCalculator from "../assets/images_port/tips-calculator.png";
 
 const ProyectosCard = ref([
+{
+    name: "Pokedex",
+    image: PokedexI,
+    description:
+      "Hecha con NextJS para poner en practica mis conocimientos.",
+    github_link: "https://github.com/ritzudev/pokedex-App",
+    page_link: "https://pokedex-ritzudev.netlify.app/",
+    stack: " HTML, Tailwind, JavaScript, NextJS",
+  },
   {
     name: "BVB Blog",
     image: BVBEscudo,
